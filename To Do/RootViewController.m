@@ -16,10 +16,11 @@
     
     NSUserDefaults *def;
     NSMutableArray *toDoItems;
-    
-    ToDoItem *td;
     NSData *myData;
     
+    NSMutableArray *filteredToDoItems;
+    BOOL isFiltered;
+   
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,11 +51,8 @@
     
     myData = [NSData new];
     
-    
-    
-    
-    [toDoItems addObject:td];
-    
+    isFiltered = false;
+    self.searchBar.delegate = self;
     
     }
  
@@ -64,6 +62,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (isFiltered) { return filteredToDoItems.count; }
+    
     return [toDoItems count];
 }
 
@@ -72,23 +73,43 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"toDoCell" forIndexPath:indexPath];
     
     // Configure the cell...
-   
     NSString *imageName;
     
-    cell.textLabel.text = [[toDoItems objectAtIndex:indexPath.row] iName];
-    cell.detailTextLabel.text = [[toDoItems objectAtIndex:indexPath.row] iName];
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    
-    if([[[toDoItems objectAtIndex:indexPath.row]iPriority]  isEqual: @"low"])
-        
+    if(isFiltered)
     {
-        imageName = @"low.png";
-    } else if ([[[toDoItems objectAtIndex:indexPath.row]iPriority]  isEqual: @"high"]) {
-        imageName = @"high.png";
-    }else if ([[[toDoItems objectAtIndex:indexPath.row]iPriority]  isEqual: @"medium"]) {
-        imageName = @"medium.png";;
+        cell.textLabel.text = [[filteredToDoItems objectAtIndex:indexPath.row] iName];
+        cell.detailTextLabel.text = [[filteredToDoItems objectAtIndex:indexPath.row] iName];
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        
+        if([[[filteredToDoItems objectAtIndex:indexPath.row]iPriority]
+            isEqual: @"low"])
+        {
+            imageName = @"low.png";
+        } else if ([[[filteredToDoItems objectAtIndex:indexPath.row]iPriority]
+                    isEqual: @"high"]) {
+            imageName = @"high.png";
+        }else if ([[[filteredToDoItems objectAtIndex:indexPath.row]iPriority]
+                   isEqual: @"medium"]) {
+            imageName = @"medium.png";;
+        }
+        cell.imageView.image = [UIImage imageNamed:imageName];
+        
+    } else {
+        
+        cell.textLabel.text = [[toDoItems objectAtIndex:indexPath.row] iName];
+        cell.detailTextLabel.text = [[toDoItems objectAtIndex:indexPath.row] iName];
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        
+        if([[[toDoItems objectAtIndex:indexPath.row]iPriority]  isEqual: @"low"])
+        {
+            imageName = @"low.png";
+        } else if ([[[toDoItems objectAtIndex:indexPath.row]iPriority]  isEqual: @"high"]) {
+            imageName = @"high.png";
+        }else if ([[[toDoItems objectAtIndex:indexPath.row]iPriority]  isEqual: @"medium"]) {
+            imageName = @"medium.png";;
+        }
+        cell.imageView.image = [UIImage imageNamed:imageName];
     }
-    cell.imageView.image = [UIImage imageNamed:imageName];
      
     return cell;
 }
@@ -140,5 +161,39 @@
     [def setObject:myData forKey:@"todo"];
     [def synchronize];
 }
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length == 0) {
+        
+        isFiltered = false;
+        
+        [self.searchBar endEditing:YES];
+        
+    }
+    
+    else {
+        
+        isFiltered = true;
+        
+        filteredToDoItems = [[NSMutableArray alloc]init];
+        
+        for (ToDoItem *item in toDoItems) {
+            
+            NSRange range = [item.iName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            
+            if (range.location != NSNotFound) {
+                
+                [filteredToDoItems addObject:item];
+                
+            }
+            
+        }
+        
+    }
+    
+    [self.tableView reloadData];
+}
+
 @end
 
