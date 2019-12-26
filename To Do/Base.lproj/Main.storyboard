@@ -52,11 +52,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hN9-qX-QQI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="x1x-hM-9t8">
-                            <connections>
-                                <action selector="add:" destination="hyv-cI-YJE" id="Xh2-qZ-iOH"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="x1x-hM-9t8">
+                                <connections>
+                                    <action selector="add:" destination="hyv-cI-YJE" id="Xh2-qZ-iOH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="zXD-TI-qOK">
+                                <connections>
+                                    <action selector="deleteAllNotes:" destination="hyv-cI-YJE" id="uCz-31-Z6f"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="gLr-03-ovt" id="1sb-9c-HCu"/>

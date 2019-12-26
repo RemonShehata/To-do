@@ -13,7 +13,7 @@
 #import "ViewEditViewController.h"
 
 @interface RootViewController : UITableViewController
-<AddNewToDoItemsProtocol,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+<AddNewToDoItemsProtocol,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 

@@ -195,5 +195,29 @@
     [self.tableView reloadData];
 }
 
+
+- (IBAction)deleteAllNotes:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Delete all"
+                          message:@"Are you sure that you want to delete all the notes?"
+                          delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"Yes", nil];
+    
+    [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 1)
+    {
+        def = [NSUserDefaults standardUserDefaults];
+        [def removeObjectForKey:@"todo"];
+        [toDoItems removeAllObjects];
+        [self.tableView reloadData];
+    }
+}
+
 @end
 
