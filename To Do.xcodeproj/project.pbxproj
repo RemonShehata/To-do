@@ -16,6 +16,7 @@
 		21B9425F23A4D5970063B9A5 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B9425E23A4D5970063B9A5 /* ToDoItem.m */; };
 		21B9426223A4E25D0063B9A5 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B9426123A4E25D0063B9A5 /* AddTaskViewController.m */; };
 		9E0F5E9323AF9E4000FD9D52 /* ViewEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F5E9223AF9E4000FD9D52 /* ViewEditViewController.m */; };
+		9E56659923B4ADD000BD0EA6 /* InProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E56659823B4ADD000BD0EA6 /* InProgressTableViewController.m */; };
 		9EC3E7B523AFCB2300C564EA /* high.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3E7B223AFCB2200C564EA /* high.png */; };
 		9EC3E7B623AFCB2300C564EA /* low.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3E7B323AFCB2200C564EA /* low.png */; };
 		9EC3E7B723AFCB2300C564EA /* medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3E7B423AFCB2200C564EA /* medium.png */; };
@@ -39,6 +40,8 @@
 		21B9426423A508C30063B9A5 /* AddNewToDoItemsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewToDoItemsProtocol.h; sourceTree = "<group>"; };
 		9E0F5E9123AF9E4000FD9D52 /* ViewEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewEditViewController.h; sourceTree = "<group>"; };
 		9E0F5E9223AF9E4000FD9D52 /* ViewEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewEditViewController.m; sourceTree = "<group>"; };
+		9E56659723B4ADD000BD0EA6 /* InProgressTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InProgressTableViewController.h; sourceTree = "<group>"; };
+		9E56659823B4ADD000BD0EA6 /* InProgressTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InProgressTableViewController.m; sourceTree = "<group>"; };
 		9EC3E7B223AFCB2200C564EA /* high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = high.png; sourceTree = "<group>"; };
 		9EC3E7B323AFCB2200C564EA /* low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low.png; sourceTree = "<group>"; };
 		9EC3E7B423AFCB2200C564EA /* medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medium.png; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				21B9426123A4E25D0063B9A5 /* AddTaskViewController.m */,
 				9E0F5E9123AF9E4000FD9D52 /* ViewEditViewController.h */,
 				9E0F5E9223AF9E4000FD9D52 /* ViewEditViewController.m */,
+				9E56659723B4ADD000BD0EA6 /* InProgressTableViewController.h */,
+				9E56659823B4ADD000BD0EA6 /* InProgressTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				21B9423F23A4D0800063B9A5 /* main.m in Sources */,
 				21B9425F23A4D5970063B9A5 /* ToDoItem.m in Sources */,
 				21B9425C23A4D54D0063B9A5 /* RootViewController.m in Sources */,
+				9E56659923B4ADD000BD0EA6 /* InProgressTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
