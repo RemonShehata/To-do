@@ -258,6 +258,7 @@
                     <connections>
                         <segue destination="PDb-Na-QJ6" kind="relationship" relationship="viewControllers" id="LJV-Gc-5bm"/>
                         <segue destination="NnP-2I-mwJ" kind="relationship" relationship="viewControllers" id="fFo-Vf-5CZ"/>
+                        <segue destination="2FV-DX-3K9" kind="relationship" relationship="viewControllers" id="mRT-Zw-ypg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNW-v5-Op6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,6 +293,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxF-hB-dB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="412" y="606"/>
+        </scene>
+        <!--Done-->
+        <scene sceneID="6Wr-9Y-iUg">
+            <objects>
+                <tableViewController title="Done" id="2FV-DX-3K9" customClass="DoneTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LXu-KS-X1A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="doneCell" id="kh8-RY-I8O">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kh8-RY-I8O" id="fOE-P8-gYq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2FV-DX-3K9" id="s37-5F-nSW"/>
+                            <outlet property="delegate" destination="2FV-DX-3K9" id="WIp-00-W21"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Done" id="C1f-af-zgw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHR-rR-8F4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360" y="602"/>
         </scene>
         <!--To Do-->
         <scene sceneID="2ew-Oj-BU1">
