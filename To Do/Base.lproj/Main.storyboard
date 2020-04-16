@@ -259,6 +259,7 @@
                         <segue destination="PDb-Na-QJ6" kind="relationship" relationship="viewControllers" id="LJV-Gc-5bm"/>
                         <segue destination="NnP-2I-mwJ" kind="relationship" relationship="viewControllers" id="fFo-Vf-5CZ"/>
                         <segue destination="2FV-DX-3K9" kind="relationship" relationship="viewControllers" id="mRT-Zw-ypg"/>
+                        <segue destination="oLa-mQ-tYZ" kind="relationship" relationship="viewControllers" id="iT3-sr-gkL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNW-v5-Op6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -322,6 +323,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHR-rR-8F4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1360" y="602"/>
+        </scene>
+        <!--Priority-->
+        <scene sceneID="UcJ-GF-QYo">
+            <objects>
+                <tableViewController id="oLa-mQ-tYZ" customClass="PriorityTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MIN-Wa-pTE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="00A-vC-XOO">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Low"/>
+                                <segment title="Medium"/>
+                                <segment title="High"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentChanged:" destination="oLa-mQ-tYZ" eventType="valueChanged" id="tYL-PZ-d71"/>
+                            </connections>
+                        </segmentedControl>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priorityCell" id="3gE-pn-k96">
+                                <rect key="frame" x="0.0" y="60" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gE-pn-k96" id="xj1-Lv-YmB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oLa-mQ-tYZ" id="lNc-do-kkV"/>
+                            <outlet property="delegate" destination="oLa-mQ-tYZ" id="Nci-o2-IDw"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Priority" id="ykT-XS-eA4"/>
+                    <connections>
+                        <outlet property="prioritySegment" destination="00A-vC-XOO" id="bgb-Wn-nDf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8F-h7-ZQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2185" y="610"/>
         </scene>
         <!--To Do-->
         <scene sceneID="2ew-Oj-BU1">
